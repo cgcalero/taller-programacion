@@ -48,4 +48,44 @@ public class OperadorArreglos {
         
         return maximo;
     }
+    
+    public void eliminarValor(int valor){
+    
+        int indValor = -1;
+        
+        for (int i = 0; i < datos.length; i++) {
+            if(datos[i] == valor){
+                indValor = i;
+            }
+        }
+        
+        if(indValor != -1){
+            
+            for (int i = indValor; i < datos.length; i++) {                
+                if(i < datos.length - 1){
+                   datos[i] = datos[i+1]; 
+                }else{
+                    datos[i] = 0;
+                }
+                
+            }
+            
+        }else{
+            System.out.printf("El elemento ingresado %d no se encuentra en el arreglo", valor);
+        }
+    }
+
+    void imprimirArreglo() {
+        for (int dato : datos) {
+            System.out.printf("%d ", dato);
+        }
+        System.out.println("");
+    }
+    
+    static void imprimirArreglo(int[] arreglo){
+        for (int dato : arreglo) {
+            System.out.printf("%d ", dato);
+        }
+        System.out.println("");
+    }
 }

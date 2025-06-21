@@ -4,7 +4,7 @@
  */
 package pe.edu.utp.tallerprogrmacion;
 
-import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  *
@@ -12,11 +12,23 @@ import java.util.Arrays;
  */
 public class Programa {
     public static void main(String[] args) {
-//        
-//        int[] datos = {15, 12, 18, 13, 11};
-//        
-//        OperadorArreglos arreglos = new OperadorArreglos(datos);
-//        
+        
+        Object o;
+        int[] datos = {12, 16, 22, 5, 48, 31};
+        
+        OperadorArreglos arreglos = new OperadorArreglos(datos);
+        
+        arreglos.imprimirArreglo();
+        
+        Scanner intro = new Scanner(System.in);
+        System.out.print("Ingrese el elemento a eliminar: ");
+        int valorEliminar = intro.nextInt();        
+        
+        arreglos.eliminarValor(valorEliminar);
+        
+        OperadorArreglos.imprimirArreglo(datos);
+        
+        
 //        arreglos.calcularPromedio();
 //        
 //        int[] datosOrdenado = arreglos.obtenerArregloOrder();
@@ -56,17 +68,17 @@ public class Programa {
 //        
 //        int operador = calculadora.producto(23, 20);
 //        System.out.println(operador);
-
-        DemoPasoParametros demoPasoParametros = new DemoPasoParametros();
-        int unidades = 125;
-        double[] precios = {10.45, 15, 56, 23, 2.5};
-        
-        System.out.println("Antes del metodo");
-        System.out.printf("unidades: %d, precios %s\n", unidades, Arrays.toString(precios));
-        
-        demoPasoParametros.cambiarValores(unidades, precios);
-        
-        System.out.println("Despues del metodo");
-        System.out.printf("unidades: %d, precios %s\n", unidades, Arrays.toString(precios));
+//
+//        DemoPasoParametros demoPasoParametros = new DemoPasoParametros();
+//        int unidades = 125;
+//        double[] precios = {10.45, 15, 56, 23, 2.5};
+//        
+//        System.out.println("Antes del metodo");
+//        System.out.printf("unidades: %d, precios %s\n", unidades, Arrays.toString(precios));
+//        
+//        demoPasoParametros.cambiarValores(unidades, precios);
+//        
+//        System.out.println("Despues del metodo");
+//        System.out.printf("unidades: %d, precios %s\n", unidades, Arrays.toString(precios));
     }
 }
