@@ -4,6 +4,8 @@
  */
 package pe.edu.utp.tallerprogramacion.objetos;
 
+import java.util.Objects;
+
 /**
  *
  * @author Christiam Calero
@@ -47,5 +49,41 @@ public class Cancion {
 
     public void setDuracion(double duracion) {
         this.duracion = duracion;
-    }        
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.nombre);
+        hash = 59 * hash + Objects.hashCode(this.cantante);
+        hash = 59 * hash + Objects.hashCode(this.genero);
+        hash = 59 * hash + (int) (Double.doubleToLongBits(this.duracion) ^ (Double.doubleToLongBits(this.duracion) >>> 32));
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cancion other = (Cancion) obj;
+        if (Double.doubleToLongBits(this.duracion) != Double.doubleToLongBits(other.duracion)) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(this.cantante, other.cantante)) {
+            return false;
+        }
+        return Objects.equals(this.genero, other.genero);
+    }
+
+    
 }
