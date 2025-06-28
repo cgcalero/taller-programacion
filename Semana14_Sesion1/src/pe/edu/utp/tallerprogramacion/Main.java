@@ -55,18 +55,7 @@ public class Main {
         }
         System.out.println("Alumno con Menor Nota: " + alumno + "->"+notaMenor);
     }
-    
-    /*Sobrecarga de Metodos*/
-    private void crearPersona(Persona p, Cancion c){
-        
-    }
-    private void crearPersona(Persona p, Cancion c, String disco){
-        
-    }
-    private void crearPersona(Persona p, Cancion c, int numoeri){
-        
-    }
-    
+   
     public static void main(String[] args) {
         
         Main main = new Main();
